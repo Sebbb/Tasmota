@@ -2193,7 +2193,7 @@ void LightSetOutputs(const uint16_t *cur_col_10) {
           // AddLog(LOG_LEVEL_DEBUG_MORE, "analogWrite-%i 0x%03X", i, cur_col);
 #else // ESP32
           analogWrite(Pin(GPIO_PWM1, i), bitRead(TasmotaGlobal.pwm_inverted, i) ? Settings->pwm_range - ac_zero_cross_power(cur_col) : ac_zero_cross_power(cur_col));
-          // AddLog(LOG_LEVEL_DEBUG_MORE, "analogWrite-%i 0x%03X", bitRead(TasmotaGlobal.pwm_inverted, i) ? Settings->pwm_range - cur_col : cur_col);
+          AddLog(LOG_LEVEL_DEBUG, "analogWrite-PWM %i, corrected: %i", cur_col, ac_zero_cross_power(cur_col));
 #endif // ESP32
         }
       }

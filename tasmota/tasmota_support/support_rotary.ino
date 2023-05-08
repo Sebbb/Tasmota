@@ -153,12 +153,7 @@ void RotaryInitMaxSteps(void) {
 void RotaryInit(void) {
   Rotary.present = false;
 
-  Rotary.model = !TasmotaGlobal.gpio_optiona.rotary_mi_desk;  // Option_A5
-#ifdef ESP8266
-  if (MI_DESK_LAMP == TasmotaGlobal.module_type) {
-    Rotary.model = 0;
-  }
-#endif  // ESP8266
+  Rotary.model = 0;
 
   AddLog(LOG_LEVEL_DEBUG, PSTR("ROT: Mode %d"), Rotary.model);
 
