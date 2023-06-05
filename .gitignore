@@ -17,7 +17,6 @@
 .cache
 data
 unpacked_fs
-tasmota/user_config_override.h
 build
 build_output/*
 firmware.map
