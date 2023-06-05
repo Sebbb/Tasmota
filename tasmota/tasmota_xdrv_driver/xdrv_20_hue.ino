@@ -591,11 +591,10 @@ char* HueLightStatus2Generic(const char * name, const char * modelid, const char
 
   UnishoxStrings msg(HUE_LIGHTS);
   char * buf;
-  if(!strncmp(name,"PC", 3))
+  if(!strncmp(name,"PC", 3) || !strncmp(name,"Bass Buero", 11))
     buf = ext_snprintf_malloc_P(msg[HUE_LIGHTS_STATUS_JSON2], PSTR("On/Off plug-in unit"), EscapeJSONString(name).c_str(), EscapeJSONString(modelid).c_str(), EscapeJSONString(manuf).c_str(), uniqueid);
   else
     buf = ext_snprintf_malloc_P(msg[HUE_LIGHTS_STATUS_JSON2], PSTR("Extended color light"), EscapeJSONString(name).c_str(), EscapeJSONString(modelid).c_str(), EscapeJSONString(manuf).c_str(), uniqueid);
-
   return buf;
 }
 
